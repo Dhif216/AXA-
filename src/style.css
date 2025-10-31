@@ -127,51 +127,78 @@ body {
     transition: 0.3s;
 }
 
+/* -------------------------------------- */
+/* HAMBURGER MENU FIX: THE NEW CSS RULES */
+/* -------------------------------------- */
+
+/* 1. Hamburger to 'X' transformation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 2. Menu visibility (used by React as 'open' on mobile) */
+.nav-menu.open {
+    left: 0;
+}
+
+/* -------------------------------------- */
+/* END OF FIX */
+/* -------------------------------------- */
+
+
 .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+ position: relative;
+ height: 100vh;
+ overflow: hidden;
 }
 
 .hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  opacity: 0.7;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ z-index: 1;
+ opacity: 0.7;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.45);
+ z-index: 1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 0 20px;
+ position: relative;
+ z-index: 1;
+ color: white;
+ text-align: center;
+ top: 50%;
+ transform: translateY(-50%);
+ padding: 0 20px;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+ font-size: 3rem;
+ font-weight: 700;
 }
 
 .hero-subtitle {
-  margin: 1rem 0 2rem;
-  font-size: 1.2rem;
+ margin: 1rem 0 2rem;
+ font-size: 1.2rem;
 }
 
 
@@ -191,16 +218,6 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-
-/*.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="%23D4AF37" opacity="0.03">✂</text></svg>');
-    opacity: 0.1;
-}*/
 
 .hero-content {
     position: relative;
@@ -303,7 +320,7 @@ section {
 
 /* Services Section */
 .services {
-  background: linear-gradient(3600deg, #0d0d0d 0%, #000000 100%);
+ background: linear-gradient(3600deg, #0d0d0d 0%, #000000 100%);
 }
 
 .services-grid {
@@ -388,7 +405,7 @@ section {
 
 /* About Section */
 .about {
-  background: linear-gradient(180deg, #0d0d0d 0%, #3d2b1f 100%);
+ background: linear-gradient(180deg, #0d0d0d 0%, #3d2b1f 100%);
 }
 
 .about-content {
@@ -444,30 +461,30 @@ section {
 }
 
 .about-image {
-  position: relative;
-  flex: 1;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column; /* stack video and caption */
-  align-items: center;
-  min-height: 300px; 
+ position: relative;
+ flex: 1;
+ border-radius: 15px;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column; /* stack video and caption */
+ align-items: center;
+ min-height: 300px; 
 }
 
 .about-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 15px;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ border-radius: 15px;
 }
 
 .video-caption {
-  margin-top: 1rem; /* spacing below the video */
-  font-family: 'Cinzel', serif; /* royal-style font */
-  font-size: 2rem;
-  color: var(--primary-gold);
-  text-align: center;
+ margin-top: 1rem; /* spacing below the video */
+ font-family: 'Cinzel', serif; /* royal-style font */
+ font-size: 2rem;
+ color: var(--primary-gold);
+ text-align: center;
 }
 
 
@@ -475,59 +492,62 @@ section {
 
 /* GALLERY SECTION */
 .gallery {
-  background: linear-gradient(360deg, #0d0d0d 0%, #1d1510 100%);
-  padding: 100px 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: linear-gradient(360deg, #0d0d0d 0%, #1d1510 100%);
+ padding: 100px 0;
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 2rem;
 }
 
 .gallery-item {
-  background: var(--card-bg);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ background: var(--card-bg);
+ border-radius: 15px;
+ overflow: hidden;
+ transition: transform 0.3s ease;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+ transform: scale(1.05);
 }
 
 .gallery-placeholder {
-  width: 100%;
-  aspect-ratio: 1 / 1.1; /* keeps same height for all */
-  overflow: hidden;
-  border-radius: 15px 15px 0 0;
-  position: relative;
+ width: 100%;
+ aspect-ratio: 1 / 1.1; /* keeps same height for all */
+ overflow: hidden;
+ border-radius: 15px 15px 0 0;
+ position: relative;
 }
 
 .gallery-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures consistent framing */
-  display: block;
-  transition: transform 0.3s ease;
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /* ensures consistent framing */
+ display: block;
+ transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+ transform: scale(1.08);
 }
 
 .gallery-placeholder p {
-  background: rgba(0, 0, 0, 0.65);
-  color: var(--primary-gold);
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  padding: 2rem;
-  border-top: 5px solid var(--primary-gold);
-  width: 100%;
+ background: rgba(0, 0, 0, 0.65);
+ color: var(--primary-gold);
+ font-weight: 600;
+ font-size: 1rem;
+ text-align: center;
+ padding: 2rem;
+ border-top: 5px solid var(--primary-gold);
+ width: 100%;
 }
 
 
@@ -739,10 +759,11 @@ section {
         padding: 2rem;
     }
 
-    .nav-menu.active {
+    /* .nav-menu.open class is now active when the React state is true */
+    .nav-menu.open {
         left: 0;
     }
-
+    
     .hero-title {
         font-size: 2.5rem;
     }
